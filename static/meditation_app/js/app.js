@@ -20,8 +20,7 @@ const app = () => {
     //Time Display
     const timeDisplay = document.querySelector('.base-timer__label');
     const timeSelect = document.querySelectorAll(".time-select button");
-    let remainingPathColor = document.querySelector('.base-timer__path-remaining')
-
+    
 
 
     //Duration
@@ -34,15 +33,15 @@ const app = () => {
 
     mute.addEventListener("click", function(){
         song.volume = 0;
-        mute_icon.src="svg/mute-red.svg";
-        max_icon.src="svg/volume-max.svg"
+        mute_icon.src="static/svg/mute-red.svg";
+        max_icon.src="static/svg/volume-max.svg"
 
     })
 
     max.addEventListener("click", function(){
         song.volume = 1;
-        mute_icon.src="svg/mute.svg";
-        max_icon.src="svg/volume-max-green.svg"
+        mute_icon.src="static/svg/mute.svg";
+        max_icon.src="static/svg/volume-max-green.svg"
 
     })
 
@@ -62,20 +61,20 @@ const app = () => {
         console.log('Before: '+song.volume);
         song.volume = val / 100;
         if (val>0){
-            mute_icon.src="svg/mute.svg";
+            mute_icon.src="static/svg/mute.svg";
         }
 
         if (val<100){
-            max_icon.src="svg/volume-max.svg"
+            max_icon.src="static/svg/volume-max.svg"
 
         }
 
         if (song.volume === 1){
-            max_icon.src="svg/volume-max-green.svg"
+            max_icon.src="static/svg/volume-max-green.svg"
         }
 
         if (song.volume===0){
-            mute_icon.src="svg/mute-red.svg";
+            mute_icon.src="static/svg/mute-red.svg";
         }
 
         console.log('After: '+song.volume);
@@ -103,12 +102,12 @@ const app = () => {
         if(song.paused){
             song.play();
             video.play();
-            play.src ="svg/pause-yellow.svg";
+            play.src ="static/svg/pause-yellow.svg";
 
         }else{
             song.pause();
             video.pause();
-            play.src ="svg/play.svg";
+            play.src ="static/svg/play.svg";
 
         }
     };
@@ -171,7 +170,7 @@ const app = () => {
         if (currentTime >= Time_Limit){
             song.pause();
             song.currentTime = 0;
-            play.src ="svg/play.svg";
+            play.src ="static/svg/play.svg";
             bell.play();
             video.pause();
             setTimeout(()=>{window.alert("Superb session!")}, 3000);
