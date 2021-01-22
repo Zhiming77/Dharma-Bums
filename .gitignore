@@ -4,7 +4,6 @@ __pychace__
 *.ini
 *.idea
 /admin
-/static
 *secret_key.txt
 .DS_Store
 

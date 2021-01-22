@@ -1,0 +1,459 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Roboto', sans-serif;
+}
+
+.html{
+    margin:0;
+    height: 100%;
+    overflow: hidden;
+}
+
+.body{
+    display:flex;
+    overflow:hidden;
+    flex-wrap:wrap;
+    justify-content: center;
+
+}
+
+.app{
+
+    height: 100vh;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    flex-direction:row;
+    flex-wrap:wrap;
+
+}
+
+video{
+    position: absolute;
+    z-index: -10;
+    width:100%;
+    height:100%;
+    top:0;
+    left:0;
+    object-fit: cover;
+    overflow:hidden;
+}
+
+.time-select,
+.sound-picker{
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    flex-shrink: 0;
+    flex-wrap: nowrap;
+
+}
+
+.time-select{
+    order:1;
+    z-index:1;
+    margin-right: 5vw;
+
+}
+
+.sound-picker{
+    position:relative;
+    order:3;
+    right:1vw;
+    margin-left:5vw;
+
+}
+
+.player-container{
+    order:2;
+    position: relative;
+    display: flex;
+    flex-direction:column;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+    flex-basis:20vw;
+    flex-shrink:0;
+    flex-grow:0;
+    height: 80vh;
+    margin:0 20px;
+
+}
+
+.player-container svg{
+    position:absolute;
+    height:50%;
+    top:50%;
+    left:50%;
+    transform:translate(-50%, -50%) rotate(-5deg);
+    pointer-events:none;
+}
+
+
+
+.base-timer__circle{
+    fill: none;
+    stroke: none;
+}
+
+.base-timer__path-elapsed{
+    stroke-width: 7px;
+    stroke: #E6E6FA;
+    position: relative;
+
+}
+
+.base-timer__path-remaining{
+    stroke-width: 7px;
+    stroke-linecap: square;
+    transform:rotate(90deg);
+    transform-origin: center;
+    transition: 1s linear all;
+    stroke:whitesmoke;
+
+}
+
+.base-timer__label{
+    position: absolute;
+    bottom: 0;
+    color: white;
+    display:block;
+    align-items: center;
+    justify-content: center;
+    font-size: 7.7vh;
+    font-weight: 500;
+    align-self: center;
+}
+
+.play{
+    position:absolute;
+    z-index: 1;
+    align-items: center;
+    margin: 0 auto;
+    align-self:center;
+
+}
+
+.base-timer{
+    flex:1;
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+
+
+}
+
+
+
+.vol-control-container{
+    position:relative;
+    left:2vw;
+    bottom:7vh;
+    align-self: center;
+    order:4;
+    display:flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap:wrap;
+    margin-top:5vh;
+}
+
+.vol-control-container button{
+    border:none;
+    cursor: pointer;
+    background:none;
+
+}
+.volume-slider{
+    width:250%;
+}
+
+.vol-image{
+    width:72px;
+    height:auto;
+}
+
+.volume-slider-container{
+
+    margin: 0 30px 0 5px;
+
+}
+
+.mute-button{
+    position:relative;
+    margin-right:25px;
+
+
+}
+
+
+.max-button{
+    position:relative;
+    margin-left:200px;
+
+
+}
+
+
+
+.time-select button,
+.sound-picker button{
+    color:white;
+    width:30%;
+    height:10%;
+    background:none;
+    font-size: 20px;
+    cursor: pointer;
+    border:2px solid white;
+    transition: all 0.5s ease;
+
+
+}
+
+.time-select button{
+    /*flex-wrap: nowrap;*/
+    border-radius: 7px;
+    flex-shrink:0;
+    width: 100%;
+    height:100%;
+    padding: 25px 15px;
+    margin:35px 5px;
+
+}
+
+.time-select button:hover{
+    color:black;
+    background:white;
+}
+
+.sound-picker button{
+    border:none;
+    height:120px;
+    width:120px;
+    border-radius: 50%;
+    padding:30px;
+    margin:20px 0;
+
+}
+
+.sound-picker button:nth-child(1){
+    background: #87CEFA
+}
+
+.sound-picker button:nth-child(2){
+    background: #F0E68C
+}
+
+.sound-picker button:nth-child(3){
+    background: indianred;
+}
+
+.sound-picker button img{
+    height:100%;
+}
+
+@media only screen
+    and (max-width: 532px){
+
+    .player-container svg{
+        height:40%;
+    }
+
+    .play{
+        height:25%;
+
+    }
+
+
+    .time-select button,
+    .sound-picker button{
+        font-size: 10px;
+    }
+
+    .time-select button{
+        padding:10px 5px;
+        margin:20px 5px;
+    }
+
+    .sound-picker button{
+        display:flex;
+        justify-content: center;
+        align-items:center;
+        height:60px;
+        width:60px;
+    }
+
+    .sound-picker button img{
+        height: 36px;
+        width: auto;
+
+    }
+
+    .vol-control-container{
+        margin:0;
+    }
+    .volume-slider{
+        width: 100%;
+    }
+
+    .mute-button{
+        margin-right:0;
+    }
+
+    .max-button{
+        margin-left:0;
+    }
+
+    .vol-image{
+        width: 54px;
+    }
+
+}
+
+@media only screen
+and (min-device-width: 320px)
+and (max-device-width: 568px)
+and (-webkit-min-device-pixel-ratio: 2) {
+
+
+    .app {
+        flex-direction: column;
+    }
+
+    .time-select,
+    .sound-picker {
+
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        flex-shrink: 0;
+        flex-wrap: nowrap;
+        margin-bottom: 5vh;
+
+
+    }
+
+    .time-select{
+        margin-right:0;
+
+    }
+
+    .sound-picker{
+        margin-top: 15vh;
+    }
+
+    .time-select button {
+        border-radius: 7px;
+        flex-shrink: 0;
+        width: auto;
+        height: 100%;
+        padding: 15px 5px;
+        margin: 0 5px;
+        font-size: 3vh;
+
+    }
+
+    .sound-picker button{
+        border:none;
+        height:auto;
+        width:auto;
+        border-radius: 50%;
+        padding:20px;
+        margin:20px 10px;
+
+    }
+
+    .player-container svg{
+        height:200%;
+        top:50%;
+        left:50%;
+
+    }
+
+    .base-timer__label{
+        position:relative;
+        bottom: 0;
+        font-weight: 500;
+        align-self: center;
+    }
+
+    .play{
+       height: 100%;
+       top: 20vh;
+
+
+
+    }
+
+    .volume-slider-container{
+        margin:0 2vh 0 2vh;
+    }
+
+}
+
+
+@media only screen
+and (min-device-width: 375px)
+and (max-device-width: 812px)
+and (-webkit-min-device-pixel-ratio: 3) {
+
+    .time-select button{
+        width:30vw;
+    }
+
+    .sound-picker button{
+        padding:30px;
+    }
+
+    .base-timer__label{
+
+        font-size: 5vh;
+
+    }
+
+
+
+}
+
+
+@media only screen
+and (device-width: 428px)
+and (device-height: 926px)
+and (-webkit-device-pixel-ratio: 3) {
+
+    .time-select button{
+        width:30vw;
+    }
+
+    .sound-picker button{
+        padding:30px;
+    }
+
+    .base-timer__label{
+
+        font-size: 5vh;
+
+    }
+
+}
+
+@media only screen
+and (min-device-width: 768px)
+and (max-device-width: 1024px)
+and (-webkit-min-device-pixel-ratio: 2) {
+
+    .player-container svg{
+        height:40%;
+    }
+}
+
+
+
+
+
