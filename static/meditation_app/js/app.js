@@ -20,7 +20,7 @@ const app = () => {
     //Time Display
     const timeDisplay = document.querySelector('.base-timer__label');
     const timeSelect = document.querySelectorAll(".time-select button");
-    
+
 
 
     //Duration
@@ -48,8 +48,8 @@ const app = () => {
     //Pick Different Sounds
     sounds.forEach(sound=>{
         sound.addEventListener("click", function(){
-            song.src = this.getAttribute('data-sound');
-            video.src = this.getAttribute('data-video');
+            song.src = "/static" + this.getAttribute('data-sound');
+            video.src = "/static" +this.getAttribute('data-video');
 
             checkPlaying(song);
         });
