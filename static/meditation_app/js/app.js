@@ -34,23 +34,23 @@ const app = () => {
 
     mute.addEventListener("click", function(){
         song.volume = 0;
-        mute_icon.src="static/meditation_app/svg/mute-red.svg";
-        max_icon.src="static/meditation_app/svg/volume-max.svg"
+        mute_icon.src="svg/mute-red.svg";
+        max_icon.src="svg/volume-max.svg"
 
     })
 
     max.addEventListener("click", function(){
         song.volume = 1;
-        mute_icon.src="static/meditation_app/svg/mute.svg";
-        max_icon.src="static/meditation_app/svg/volume-max-green.svg"
+        mute_icon.src="svg/mute.svg";
+        max_icon.src="svg/volume-max-green.svg"
 
     })
 
     //Pick Different Sounds
     sounds.forEach(sound=>{
         sound.addEventListener("click", function(){
-            song.src = "static/meditation_app/"+this.getAttribute('data-sound');
-            video.src = "static/meditation_app/"+this.getAttribute('data-video');
+            song.src = this.getAttribute('data-sound');
+            video.src = this.getAttribute('data-video');
 
             checkPlaying(song);
         });
@@ -62,20 +62,20 @@ const app = () => {
         console.log('Before: '+song.volume);
         song.volume = val / 100;
         if (val>0){
-            mute_icon.src="static/meditation_app/svg/mute.svg";
+            mute_icon.src="svg/mute.svg";
         }
 
         if (val<100){
-            max_icon.src="static/meditation_app/svg/volume-max.svg"
+            max_icon.src="svg/volume-max.svg"
 
         }
 
         if (song.volume === 1){
-            max_icon.src="static/meditation_app/svg/volume-max-green.svg"
+            max_icon.src="svg/volume-max-green.svg"
         }
 
         if (song.volume===0){
-            mute_icon.src="static/meditation_app/svg/mute-red.svg";
+            mute_icon.src="svg/mute-red.svg";
         }
 
         console.log('After: '+song.volume);
@@ -103,12 +103,12 @@ const app = () => {
         if(song.paused){
             song.play();
             video.play();
-            play.src ="static/meditation_app/svg/pause-yellow.svg";
+            play.src ="svg/pause-yellow.svg";
 
         }else{
             song.pause();
             video.pause();
-            play.src ="static/meditation_app/svg/play.svg";
+            play.src ="svg/play.svg";
 
         }
     };
@@ -171,7 +171,7 @@ const app = () => {
         if (currentTime >= Time_Limit){
             song.pause();
             song.currentTime = 0;
-            play.src ="static/meditation_app/svg/play.svg";
+            play.src ="svg/play.svg";
             bell.play();
             video.pause();
             setTimeout(()=>{window.alert("Superb session!")}, 3000);
