@@ -1,0 +1,11 @@
+db.sqlite3
+__pychace__
+*.pyc
+*.ini
+*.idea
+/admin
+/static
+*secret_key.txt
+.DS_Store
+
+
