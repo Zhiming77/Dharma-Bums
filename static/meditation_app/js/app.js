@@ -49,7 +49,7 @@ const app = () => {
     sounds.forEach(sound=>{
         sound.addEventListener("click", function(){
             song.src = "/static" + this.getAttribute('data-sound');
-            video.src = "/static" +this.getAttribute('data-video');
+            video.src = "/static" + this.getAttribute('data-video');
 
             checkPlaying(song);
         });
